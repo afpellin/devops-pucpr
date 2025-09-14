@@ -1,4 +1,4 @@
-name: Alerta Discord
+name: Alerta Discord por Commit
 
 on:
   push:
@@ -6,9 +6,14 @@ on:
       - main
 
 jobs:
-  notify:
+  notify-discord:
     runs-on: ubuntu-latest
     steps:
+      - name: Configurar variáveis do Git
+        run: |
+          echo "COMMIT_AUTHOR=$(git log -1 --pretty=format:'%an')" >> $GITHUB_ENV
+          echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
+
       - name: Enviar alerta para Discord
         uses: peter-evans/webhook@v1
         with:
@@ -17,5 +22,5 @@ jobs:
           content-type: 'application/json'
           body: |
             {
-              "content": "🚀 Novo commit ou merge realizado no branch **main** do repositório devops-pucpr!"
+              "content": "🚀 Novo commit no branch **main** do repositório **devops-pucpr**!\n**Autor:** ${{ env.COMMIT_AUTHOR }}\n**Mensagem:** ${{ env.COMMIT_MESSAGE }}\n**Link do commit:** ${{ github.event.head_commit.url }}"
             }
