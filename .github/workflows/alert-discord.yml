@@ -1,0 +1,21 @@
+name: Alerta Discord
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar alerta para Discord
+        uses: peter-evans/webhook@v1
+        with:
+          url: ${{ secrets.DISCORD_WEBHOOK }}
+          method: POST
+          content-type: 'application/json'
+          body: |
+            {
+              "content": "🚀 Novo commit ou merge realizado no branch **main** do repositório devops-pucpr!"
+            }
