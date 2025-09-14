@@ -1,4 +1,4 @@
-# 🚀 DevOps-PucPR
+# DevOps-PucPR 🚀
 
 🔧 [CI](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml)  
 📦 [CD](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml)
