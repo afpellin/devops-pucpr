@@ -1,9 +1,9 @@
-# DevOps-PucPR
+# 🚀 DevOps-PucPR
 
-[📦[CI](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml/badge.svg)](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml)
-[📦[CD](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml/badge.svg)](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml)
+🔧 [CI](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml)  
+📦 [CD](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml)
 
-## Descrição
+## 📄 Descrição
 
 Este repositório contém um projeto desenvolvido para a disciplina de DevOps na PUCPR.  
 Ele demonstra o fluxo completo de **CI/CD** utilizando **GitHub Actions**, além da **dockerização** da aplicação.
