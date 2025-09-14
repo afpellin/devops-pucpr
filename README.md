@@ -1,7 +1,7 @@
 # DevOps-PucPR
 
-[![CI](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml/badge.svg)](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml)
-[![CD](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml/badge.svg)](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml)
+[📦[CI](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml/badge.svg)](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml)
+[📦[CD](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml/badge.svg)](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml)
 
 ## Descrição
 
