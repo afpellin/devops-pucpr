@@ -95,3 +95,9 @@ Acesse no navegador: [http://localhost:8080](http://localhost:8080)
 
 **André Felipe Pellin Bonfim**  
 [GitHub](https://github.com/afpellin) | [LinkedIn](https://www.linkedin.com/in/afpellin/")
+
+🚀 Novo commit no branch main do repositório devops-pucpr!
+Autor: André Felipe
+Mensagem: Adiciona workflow de alerta no Discord
+Link do commit: https://github.com/afpellin/devops-pucpr/commit/abcd1234
+
