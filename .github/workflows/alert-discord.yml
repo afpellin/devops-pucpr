@@ -2,12 +2,12 @@ name: Alerta Discord por Commit
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, 'feature/*']
 
 jobs:
   notify-discord:
     runs-on: ubuntu-latest
+
     steps:
       - name: Configurar variáveis do Git
         run: |
@@ -22,5 +22,5 @@ jobs:
           content-type: 'application/json'
           body: |
             {
-              "content": "🚀 Novo commit no branch **main** do repositório **devops-pucpr**!\n**Autor:** ${{ env.COMMIT_AUTHOR }}\n**Mensagem:** ${{ env.COMMIT_MESSAGE }}\n**Link do commit:** ${{ github.event.head_commit.url }}"
+              "content": "🚀 Novo commit no branch **${{ github.ref_name }}** do repositório **devops-pucpr**!\n**Autor:** ${{ env.COMMIT_AUTHOR }}\n**Mensagem:** ${{ env.COMMIT_MESSAGE }}\n**Link do commit:** https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
             }
