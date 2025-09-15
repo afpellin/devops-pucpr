@@ -1,0 +1,13 @@
+{
+  "name": "devops-pucpr",
+  "version": "1.0.0",
+  "description": "Projeto DevOps PUC-PR: CI/CD com Node.js e Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "author": "André Felipe",
+  "license": "MIT",
+  "dependencies": {}
+}
