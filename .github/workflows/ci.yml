@@ -1,5 +1,16 @@
-- name: Send notification to Discord
-  run: |
-    curl -H "Content-Type: application/json" \
-         -d '{"content": "✅ Deploy finalizado com sucesso no DockerHub!"}' \
-         ${{ secrets.DISCORD_WEBHOOK }}
+name: CI Discord Notification
+on:
+  workflow_run:
+    workflows: ["CD Pipeline"]
+    types:
+      - completed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar alerta Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d '{"content": "✅ Deploy finalizado com sucesso no DockerHub!"}' \
+               ${{ secrets.DISCORD_WEBHOOK }}
