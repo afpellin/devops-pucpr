@@ -1,29 +1,44 @@
-name: CD
+name: CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build-and-docker:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # Checkout do repositório
+      - name: Checkout do código
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      # Instalar Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-      - name: Build Docker image
+      # Instalar dependências
+      - name: Instalar dependências
+        run: npm install
+
+      # Rodar testes
+      - name: Executar testes
+        run: npm test
+
+      # Build da imagem Docker
+      - name: Build da imagem Docker
         run: docker build -t devops-pucpr .
 
-      # Opcional: push para Docker Hub
-      # - name: Log in to DockerHub
-      #   uses: docker/login-action@v2
-      #   with:
-      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
-      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
-      #
-      # - name: Push Docker image
-      #   run: docker push devops-pucpr
+      # (Opcional) Login no DockerHub e push da imagem
+      # Para ativar, você deve configurar DOCKER_USERNAME e DOCKER_PASSWORD
+      # em "Settings > Secrets > Actions" no GitHub.
+      - name: Login no DockerHub
+        if: success()
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push da imagem para o DockerHub
+        if: success()
+        run: docker tag devops-pucpr ${{ secrets.DOCKER_USERNAME }}/devops-pucpr:latest && docker push ${{ secrets.DOCKER_USERNAME }}/devops-pucpr:latest
