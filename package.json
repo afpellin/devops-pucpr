@@ -4,9 +4,13 @@
   "description": "Projeto DevOps PUC-PR: CI/CD com Node.js e Docker",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"No tests yet\" && exit 0"
-  },
+  "start": "node index.js",
+  "test": "jest"
+},
+"devDependencies": {
+  "jest": "^29.7.0",
+  "supertest": "^6.3.3"
+},
   "author": "André Felipe",
   "license": "MIT",
   "dependencies": {}
