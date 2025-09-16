@@ -1,13 +1,14 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-const PORT = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Olá, DevOps PUC-PR!\n');
+app.get('/', (req, res) => {
+  res.send('Servidor rodando com sucesso!');
 });
 
-server.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log('Servidor rodando em http://localhost:3000');
+  });
+}
+
+module.exports = app; // Exporta para os testes
