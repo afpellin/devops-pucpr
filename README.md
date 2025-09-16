@@ -5,24 +5,26 @@
 
 ## 📄 Descrição
 
-Este repositório contém um projeto desenvolvido para a disciplina de DevOps na PUCPR.  
-Ele demonstra o fluxo completo de **CI/CD** utilizando **GitHub Actions**, além da **dockerização** da aplicação.
+Este repositório foi desenvolvido para a disciplina de DevOps na PUCPR.
+O projeto demonstra um fluxo completo de CI/CD utilizando GitHub Actions, além da dockerização da aplicação Node.js.
 
-O objetivo é aplicar conceitos práticos de DevOps, incluindo:  
-- 🌿 Criação de branches e commits organizados  
-- 🔄 Pull Requests com integração contínua (CI) e testes automatizados  
-- 🚀 Deploy contínuo (CD) com build e push de imagens Docker  
-- 🐳 Execução local da aplicação em container Docker
+O objetivo é aplicar conceitos práticos de DevOps, incluindo:
 
-**Linguagem base:** Node.js com Express  
-**Ferramentas utilizadas:** Git, GitHub, Docker, GitHub Actions, Jest, Supertest
+🌿 Criação de branches e commits organizados
 
+🔄 Pull Requests com integração contínua (CI) e testes automatizados
+
+🚀 Deploy contínuo (CD) com build e push de imagens Docker
+
+🐳 Execução local da aplicação em container Docker
+
+Linguagem base: Node.js com Express
+Ferramentas utilizadas: Git, GitHub, Docker, GitHub Actions, Jest, Supertest
 ---
-
 ## 🗂 Estrutura do Projeto
 
 ```
-DevOps-PucPR/
+DevOps-PUCPR/
 ├─ .github/workflows/      # Workflows CI/CD do GitHub Actions
 ├─ src/                    # Código-fonte da aplicação
 ├─ test/                   # Testes automatizados
@@ -31,7 +33,6 @@ DevOps-PucPR/
 ├─ package.json            # Dependências e scripts Node.js
 └─ README.md               # Este arquivo
 ```
-
 ---
 
 ## 💻 Como Rodar Localmente
@@ -83,11 +84,11 @@ Acesse no navegador: [http://localhost:8080](http://localhost:8080)
 
 ⚙️ Workflows GitHub Actions
 
-🔧 CI: Testes automatizados com Jest + lint (placeholder)
+🔧 CI: Testes automatizados com Jest + lint
 
 📦 CD: Build e push da imagem Docker (opcional para Docker Hub)
 
-> Certifique-se de configurar os **secrets** `DOCKERHUB_USERNAME` e `DOCKERHUB_TOKEN` no repositório, caso queira publicar a imagem no Docker Hub.
+💡 Para publicar no Docker Hub, configure os secrets DOCKER_USERNAME e DOCKER_PASSWORD no repositório.
 
 ---
 
@@ -95,9 +96,3 @@ Acesse no navegador: [http://localhost:8080](http://localhost:8080)
 
 **André Felipe Pellin Bonfim**  
 [GitHub](https://github.com/afpellin) | [LinkedIn](https://www.linkedin.com/in/afpellin/")
-
-🚀 Novo commit no branch main do repositório devops-pucpr!
-Autor: André Felipe
-Mensagem: Adiciona workflow de alerta no Discord
-Link do commit: https://github.com/afpellin/devops-pucpr/commit/abcd1234
-
