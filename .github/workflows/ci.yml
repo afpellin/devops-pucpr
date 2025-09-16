@@ -1,26 +1,40 @@
-name: Node.js CI
+name: CI Pipeline - DevOps PucPR
 
+# Executa o workflow a cada PR para o branch main
 on:
-  push:
-    branches: [main, 'feature/*']
   pull_request:
-    branches: [main]
+    branches: [ main ]
+  push:
+    branches: [ main ] # opcional: também roda ao dar push no main
 
 jobs:
-  build-and-test:
+  test:
+    name: Executar Testes Unitários
     runs-on: ubuntu-latest
 
     steps:
+      # Passo 1: fazer checkout do repositório
       - name: Checkout do código
         uses: actions/checkout@v3
 
+      # Passo 2: configurar Node.js
       - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      # Passo 3: instalar dependências
       - name: Instalar dependências
         run: npm install
 
-      - name: Rodar testes
+      # Passo 4: rodar testes com Jest
+      - name: Rodar testes unitários
         run: npm test
+
+      # Passo 5 (opcional): notificar Discord sobre o sucesso do CI
+      - name: Notificar Discord sobre testes
+        if: success()
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d "{\"content\": \"✅ Testes unitários executados com sucesso no branch main!\"}" \
+               ${{ secrets.DISCORD_WEBHOOK }}
