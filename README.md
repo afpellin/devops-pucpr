@@ -1,6 +1,7 @@
 # DevOps-PucPR 🚀
 
-![CI Status](https://img.shields.io/github/actions/workflow/status/afpellin/DevOps-PucPR/ci.yml?branch=main) ![CD Status](https://img.shields.io/github/actions/workflow/status/afpellin/DevOps-PucPR/cd.yml?branch=main)
+🔧 [CI](https://github.com/afpellin/DevOps-PucPR/actions/workflows/ci.yml)  
+📦 [CD](https://github.com/afpellin/DevOps-PucPR/actions/workflows/cd.yml)
 
 ## 📄 Descrição
 
